@@ -90,22 +90,22 @@ class MuseumTest < Minitest::Test
     assert_equal patrons_by_exhibit, @museum.patrons_by_exhibit_interest
   end
 
-  def test_patrons_attend_most_expensive_exhibit_they_can_afford
-    gems_and_minerals = Exhibit.new("Gems and Minerals", 0)
-    dead_sea_scrolls = Exhibit.new("Dead Sea Scrolls", 10)
-    imax = Exhibit.new("IMAX", 15)
-    @museum.add_exhibit(gems_and_minerals)
-    @museum.add_exhibit(dead_sea_scrolls)
-    @museum.add_exhibit(imax)
-    patron_1 = Patron.new("Bob", 20)
-    patron_1.add_interest("Dead Sea Scrolls")
-    patron_1.add_interest("Gems and Minerals")
-    patrons_of_exhibits = {
-      gems_and_minerals => [patron_1],
-      dead_sea_scrolls => [patron_1],
-      imax => []
-    }
-
-    assert_equal patrons_of_exhibits, @museum.admit(patron_1)
-  end
+  # def test_patrons_attend_most_expensive_exhibit_they_can_afford
+  #   gems_and_minerals = Exhibit.new("Gems and Minerals", 0)
+  #   dead_sea_scrolls = Exhibit.new("Dead Sea Scrolls", 10)
+  #   imax = Exhibit.new("IMAX", 15)
+  #   @museum.add_exhibit(gems_and_minerals)
+  #   @museum.add_exhibit(dead_sea_scrolls)
+  #   @museum.add_exhibit(imax)
+  #   patron_1 = Patron.new("Bob", 20)
+  #   patron_1.add_interest("Dead Sea Scrolls")
+  #   patron_1.add_interest("Gems and Minerals")
+  #   patrons_of_exhibits = {
+  #     gems_and_minerals => [patron_1],
+  #     dead_sea_scrolls => [patron_1],
+  #     imax => []
+  #   }
+  #
+  #   assert_equal patrons_of_exhibits, @museum.admit(patron_1)
+  # end
 end

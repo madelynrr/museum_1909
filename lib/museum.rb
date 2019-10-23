@@ -20,7 +20,7 @@ class Museum
 
   def admit(patron)
     @patrons << patron
-    patrons_of_exhibits(patron)
+    # patrons_of_exhibits(patron)
   end
 
   def patrons_by_exhibit_interest
@@ -34,14 +34,14 @@ class Museum
     hash
   end
 
-  def patrons_of_exhibits(patron)
-    hash = {}
-    @exhibits.each do |exhibit|
-      hash[exhibit] =
-        @patrons.find_all do |patron|
-          patron.interests.include?(exhibit.name)
-        end
-    end
-    hash
-  end
+  # def patrons_of_exhibits(patron)
+  #   hash = {}
+  #   @exhibits.each do |exhibit|
+  #     hash[exhibit] =
+  #       @patrons.find_all do |patron|
+  #         patron.interests.include?(exhibit.name)
+  #       end
+  #   end
+  #   hash
+  # end
 end
