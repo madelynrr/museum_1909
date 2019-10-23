@@ -78,10 +78,13 @@ class MuseumTest < Minitest::Test
     patron_1.add_interest("Dead Sea Scrolls")
     patron_1.add_interest("Gems and Minerals")
     patron_2.add_interest("Dead Sea Scrolls")
+    patron_2.add_interest("IMAX")
+    @museum.admit(patron_1)
+    @museum.admit(patron_2)
     patrons_by_exhibit = {
       gems_and_minerals => [patron_1],
       dead_sea_scrolls => [patron_1, patron_2],
-      imax => []
+      imax => [patron_2]
     }
 
     assert_equal patrons_by_exhibit, @museum.patrons_by_exhibit_interest
