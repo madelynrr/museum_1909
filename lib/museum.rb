@@ -12,10 +12,10 @@ class Museum
   end
 
   def recommend_exhibits(patron)
+    recommend = @exhibits.find_all do |exhibit|
+      patron.interests.include?(exhibit.name)
+    end
   end
 
-  # museum has array of exhibit objects
-  #exhibit objects have names
-  #patron has array of interests, the elements of which are names
 
 end
